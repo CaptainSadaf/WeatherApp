@@ -10,7 +10,8 @@ export const NavigateDayCards = props => {
     dispatch(
       setPageNo({
         pageIndex: props.pageIndex + 1,
-        startIndex: props.startIndex + props.pageSize
+        startIndex: props.startIndex + props.pageSize,
+        pageSize:props.pageSize
       })
     );
   };
@@ -18,7 +19,8 @@ export const NavigateDayCards = props => {
     dispatch(
       setPageNo({
         pageIndex: props.pageIndex - 1,
-        startIndex: props.startIndex - props.pageSize
+        startIndex: props.startIndex - props.pageSize,
+        pageSize:props.pageSize
       })
     );
   };

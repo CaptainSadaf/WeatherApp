@@ -39,7 +39,7 @@ export const mapWeatherBarChartData = (data, tempType = null) => {
 
 export const pagedData = (data, startIndex = 0, pageSize = 3) =>
   data.filter(
-    (data, index) => index >= startIndex && index < startIndex + pageSize
+    (data, index) => index >= startIndex && index < (startIndex + pageSize)
   );
 
 export const convertTempToCelcius = temp => Math.round((temp * 9) / 5 + 32);

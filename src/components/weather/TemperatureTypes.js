@@ -5,36 +5,28 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import { dispatch } from "../../store";
 import { setTemperatureTypes } from "./actions";
+import { StyledRadio } from "../common/StyledRadio";
 
 function TemperatureTypes(props) {
-  const onTempTypeChange = event => {
-    dispatch(setTemperatureTypes("tempType", event.target.value));
-  };
-
   return (
     <FormControl component="fieldset">
       <RadioGroup
-        aria-label="position"
-        name="position"
         value={props.tempType}
         defaultValue={"F"}
-        onChange={onTempTypeChange}
+        onChange={e => {
+          props.onTempTypeChange(e);
+        }}
         row
       >
-        <FormControlLabel
-          value="C"
-          control={<Radio color="primary" />}
-          label="Celcius"
-          labelPlacement="Celcius"
-        />
+        <FormControlLabel value="C" control={<StyledRadio />} label="Celcius" />
         <FormControlLabel
           value="F"
-          control={<Radio color="primary" />}
+          control={<StyledRadio />}
           label="Fahrenheight"
-          labelPlacement="Fahrenheight"
         />
       </RadioGroup>
     </FormControl>
+    
   );
 }
 
