@@ -8,9 +8,6 @@ import { getWeatherDetails, setTemperatureTypes } from "./actions";
 import { dispatch } from "../../store";
 import { connect } from "react-redux";
 
-const onTempTypeChange = event => {
-  dispatch(setTemperatureTypes("tempType", event.target.value));
-};
 class Weather extends React.Component {
   componentDidMount() {
     dispatch(getWeatherDetails());
