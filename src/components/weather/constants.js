@@ -7,7 +7,7 @@ export const SET_SELECTED_SET_TEMPERTURE_TYPE =
 export const SET_PAGE_NO = featureKey + "/SET_PAGE_NO";
 
 export const WEATHER_API =
-  "http://api.openweathermap.org/data/2.5/forecast?q=Munich,de&APPID=75f972b80e26f14fe6c920aa6a85ad57&cnt=40";
+  "https://api.openweathermap.org/data/2.5/forecast?q=Munich,de&APPID=75f972b80e26f14fe6c920aa6a85ad57&cnt=40";
 
   export const initForm = {
     city: {},
