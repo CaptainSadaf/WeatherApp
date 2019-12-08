@@ -8,7 +8,8 @@ import { getWeatherDetails } from "./components/weather/actions";
 import { dispatch } from "./store";
 
 class App extends React.Component {
-  componentDidMount() { //componentDidMount can be replaced with react hook
+  componentDidMount() {
+    //componentDidMount can be replaced with react hook
     dispatch(getWeatherDetails()); //get city weather details
   }
   render() {
@@ -17,15 +18,8 @@ class App extends React.Component {
       <div className="App">
         <Route
           exact
-          path="/"
-          render={() =>
-            isLoading === false ? <Redirect to="/weather" /> : <Loader />
-          }
-        />
-
-        <Route
-          path="/weather"
-          render={() => (isLoading === true ? <Loader /> : <Weather />)}
+          path={process.env.PUBLIC_URL + "/"}
+          render={() => (isLoading === false ? <Weather /> : <Loader />)}
         />
       </div>
     );
