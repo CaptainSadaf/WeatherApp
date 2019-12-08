@@ -1,18 +1,22 @@
-
-
 html {
-  background-color:rgb(244, 244, 244);
+  background-color: #f8f8f9;
 }
 
 body {
   color: #272727;
-  font-family: 'Quicksand', serif;
+  font-family: "Quicksand", serif;
   font-style: normal;
   font-weight: 400;
   letter-spacing: 0;
   padding: 1rem;
 }
+.weather-card {
+  padding: "20px";
+}
 
-.card:hover{
-    background-color: cornflowerblue;
+.weather-card:active {
+  background-color: cornflowerblue;
+}
+.active {
+  background-color: cornflowerblue;
 }

@@ -1,25 +1,20 @@
 import * as React from "react";
 import { TemperatureTypes } from "./TemperatureTypes";
 import { NavigateDayCards } from "./NavigateDayCards";
-import { BarChart } from "./BarChart";
+import { ColumnChart } from "./ColumnChart";
 import { TemperatureCards } from "./TemperatureCards";
 import Grid from "@material-ui/core/Grid";
-import { getWeatherDetails, setTemperatureTypes } from "./actions";
-import { dispatch } from "../../store";
 import { connect } from "react-redux";
 
 class Weather extends React.Component {
-  componentDidMount() {
-    dispatch(getWeatherDetails());
-  }
-  onTempTypeChange = event => {
-    dispatch(setTemperatureTypes("tempType", event.target.value));
-  };
   render() {
     return (
-      <Grid container spacing={1} wrap={"wrap"}>
+      <Grid container justify="center" spacing={1} wrap={"wrap"}>
         <Grid item xs={12} sm={12}>
-          <TemperatureTypes tempType={this.props.tempType} onTempTypeChange={this.onTempTypeChange}/>
+          <TemperatureTypes
+            tempType={this.props.tempType}
+            onTempTypeChange={this.onTempTypeChange}
+          />
         </Grid>
         <Grid item xs={12} sm={12}>
           <NavigateDayCards
@@ -36,10 +31,11 @@ class Weather extends React.Component {
             pageIndex={this.props.pageIndex}
             startIndex={this.props.startIndex}
             pageSize={this.props.pageSize}
+            avgTemp={this.props.selectedDayWeather.avgTemp || null}
           />
         </Grid>
         <Grid item xs={12} sm={12}>
-          <BarChart
+          <ColumnChart
             selectedDayWeather={this.props.selectedDayWeather}
             tempType={this.props.tempType}
           />

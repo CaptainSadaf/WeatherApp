@@ -3,8 +3,10 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { Weather } from "./components/weather/reducers";
+import { Loader } from "./components/loader/reducers";
 const appReducerList = combineReducers({
-  Weather
+  Weather,
+  Loader
 });
 
 const appReducers = (state, action) => {

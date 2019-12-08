@@ -9,7 +9,6 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1
   },
   paper: {
-    padding: theme.spacing(2),
     textAlign: "center",
     color: theme.palette.text.secondary
   }
@@ -34,7 +33,7 @@ function renderTempCard(props, classes) {
     return (
       <Grid item xs={4} sm={4} key={`${weather.date}`}>
         <Paper className={classes.paper}>
-          <div className="card" >
+          <div className="card">
             <TemperatureCard weather={weather} tempType={props.tempType} />
           </div>
         </Paper>
